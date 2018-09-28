@@ -1,4 +1,3 @@
-
 .App {
   text-align: center;
 }
@@ -40,6 +39,7 @@ span{
 .imgDiv{
   display: flex;
   justify-content: center;
+  padding: 5px;
 }
 
 .container{

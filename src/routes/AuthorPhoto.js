@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import PhotoList1 from '../component/PhotoList1'
+import AuthorPhotoList from '../component/AuthorPhotoList'
 
 class AuthorPhoto extends Component {
   state = {
@@ -10,7 +10,9 @@ class AuthorPhoto extends Component {
   componentDidMount(){
     var authorName = this.props.location.state.author
     console.log('얍얍', authorName);
-    fetch(`http://localhost:3000/author/${authorName}`)
+
+    // fetch(`http://localhost:3000/author`)
+    fetch(`http://localhost:3000/author?name=${authorName}`)
     .then(res => res.json())
     .then(data => {
       console.log('authorName으로 fetch해서 받아오는 data입니다.', data)
@@ -24,12 +26,12 @@ class AuthorPhoto extends Component {
     return (
       <div>
         <div className='App-header'>
-        <h3 className="App-title">{this.props.location.state.author}</h3>
+        <h3 className="App-title">{this.props.location.state.author}'s Photos</h3>
         </div>
         {this.state.data.length === 0 ?
           <div className='App-title'>LOADING...</div> :
           // <div>hi</div>
-          <PhotoList1 data={this.state.data} />
+          <AuthorPhotoList data={this.state.data} />
         }
       </div>
     );

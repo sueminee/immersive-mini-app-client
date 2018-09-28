@@ -6,7 +6,7 @@ const Photo = (props) => {
   var width = window.innerWidth*0.9;
   var height = window.innerHeight*0.9;
   var {id, author, authorPhoto} = props.location.state;
-  console.log(author);
+  console.log('main에서 사진 누르면 photo 컴포넌트로 라우팅 됨 그럼 props.location.state.author는', author);
   return (
     <div>
       <div className='App-header'>
