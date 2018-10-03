@@ -22,8 +22,6 @@ class AuthorPhotoEntry extends Component {
           }}>
           
             <img src={`https://picsum.photos/${width}/${height}?image=${this.props.photo.id}`} alt=''/>
-          
-            
           </Link>
         </div>
       </div>
